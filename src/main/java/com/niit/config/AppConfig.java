@@ -20,7 +20,7 @@ import com.niit.daoimpl.OrderDAOImpl;
 import com.niit.daoimpl.ProductDAOImpl;
 import com.niit.daoimpl.UserDAOImpl;
 
-
+//MyComment
 @Configuration
 @ComponentScan(basePackages="com.niit")
 @EnableTransactionManagement
