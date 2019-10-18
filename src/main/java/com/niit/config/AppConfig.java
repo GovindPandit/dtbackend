@@ -45,10 +45,7 @@ public class AppConfig
 	    	properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 	    	return properties;
 	    }
-	    
-	  
 	 
-	  
 	   @Bean (name = "sessionFactory")
 	   @Autowired
 	   public LocalSessionFactoryBean getSessionFactory() 
@@ -69,6 +66,10 @@ public class AppConfig
 
 				return transactionManager;
 			}
+	    
+	    
+	    
+	    
 	    
 	    @Bean(name="userDAO")
 	    @Autowired
