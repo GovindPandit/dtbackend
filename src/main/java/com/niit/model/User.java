@@ -1,6 +1,7 @@
 package com.niit.model;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -70,26 +71,25 @@ public class User
 	
 	//One to many relationship
 	@OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL,mappedBy = "user")
-	private List<CartItem> cartitems;
+	private Set<CartItem> cartitems;
 	
 	@OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL,mappedBy = "user")
-	private List<Order> orders;
+	private Set<Order> orders;
 	
+
 	
-	public List<CartItem> getCartitems() {
+	public Set<CartItem> getCartitems() {
 		return cartitems;
 	}
-	public void setCartitems(List<CartItem> cartitems) {
+	public void setCartitems(Set<CartItem> cartitems) {
 		this.cartitems = cartitems;
 	}
-	public List<Order> getOrders() {
+	public Set<Order> getOrders() {
 		return orders;
 	}
-	public void setOrders(List<Order> orders) {
+	public void setOrders(Set<Order> orders) {
 		this.orders = orders;
 	}
-	
-	
 	public String getStatus() {
 		return status;
 	}

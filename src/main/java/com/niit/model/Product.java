@@ -1,6 +1,7 @@
 package com.niit.model;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -31,10 +32,10 @@ public class Product
 	private String status;
 	
 	@OneToMany(fetch=FetchType.EAGER)
-	private List<Order> orders;
+	private Set<Order> orders;
 	
 	@OneToMany(fetch=FetchType.EAGER)
-	private List<CartItem> cartitems;
+	private Set<CartItem> cartitems;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
 	private Category category;
@@ -45,20 +46,19 @@ public class Product
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	public List<Order> getOrders() {
+
+	public Set<Order> getOrders() {
 		return orders;
 	}
-	public void setOrders(List<Order> orders) {
+	public void setOrders(Set<Order> orders) {
 		this.orders = orders;
 	}
-	public List<CartItem> getCartitems() {
+	public Set<CartItem> getCartitems() {
 		return cartitems;
 	}
-	public void setCartitems(List<CartItem> cartitems) {
+	public void setCartitems(Set<CartItem> cartitems) {
 		this.cartitems = cartitems;
 	}
-	
-	
 	public String getStatus() {
 		return status;
 	}
