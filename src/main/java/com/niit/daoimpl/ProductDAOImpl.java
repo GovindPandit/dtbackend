@@ -27,7 +27,7 @@ public class ProductDAOImpl implements ProductDAO
 
 	public void deleteProduct(Product product) 
 	{
-		sessionFactory.getCurrentSession().save(product);
+		sessionFactory.getCurrentSession().delete(product);
 	}
 
 	public void updateProduct(Product product) 

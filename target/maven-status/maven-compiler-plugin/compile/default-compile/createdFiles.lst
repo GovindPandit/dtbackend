@@ -1,3 +1,4 @@
+com\niit\serviceimpl\UserDetailsServerIMp.class
 com\niit\dao\UserDAO.class
 com\niit\model\User.class
 com\niit\model\Product.class

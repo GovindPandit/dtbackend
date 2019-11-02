@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="com.niit.ElectronicBackend.SpringTest" time="1.154" errors="0" skipped="4">
+<testsuite tests="1" failures="0" name="com.niit.ElectronicBackend.SpringTest" time="0.007" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_20\jre\bin"/>
@@ -27,7 +27,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 8"/>
-    <property name="classworlds.conf" value="E:\eclipse softwares\dt project\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf444424629951449298.tmp"/>
+    <property name="classworlds.conf" value="E:\eclipse softwares\dt project\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf4627474119551177705.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_20\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_20/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_20/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_20/bin/../jre/lib/amd64;C:\Program Files\Java\jdk1.8.0_20\bin;E:\eclipse softwares\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -61,22 +61,48 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.niit.ElectronicBackend.SpringTest" name="getUserDetailsById" time="0.256">
-    <skipped/>
-    <system-err>Oct 18, 2019 8:20:33 AM org.springframework.test.context.support.AbstractTestContextBootstrapper getDefaultTestExecutionListenerClassNames
-INFO: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-Oct 18, 2019 8:20:33 AM org.springframework.test.context.support.AbstractTestContextBootstrapper getTestExecutionListeners
-INFO: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@20398b7c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6fc6f14e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@56235b8e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3632be31, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5abca1e0, org.springframework.test.context.event.EventPublishingTestExecutionListener@2286778]
-</system-err>
+  <testcase classname="com.niit.ElectronicBackend.SpringTest" name="initializationError" time="0.007">
+    <error message="org/springframework/core/annotation/MergedAnnotations$SearchStrategy" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: org/springframework/core/annotation/MergedAnnotations$SearchStrategy
+	at org.springframework.test.context.support.TestPropertySourceUtils.buildMergedTestPropertySources(TestPropertySourceUtils.java:74)
+	at org.springframework.test.context.support.AbstractTestContextBootstrapper.buildMergedContextConfiguration(AbstractTestContextBootstrapper.java:386)
+	at org.springframework.test.context.support.AbstractTestContextBootstrapper.buildMergedContextConfiguration(AbstractTestContextBootstrapper.java:294)
+	at org.springframework.test.context.support.AbstractTestContextBootstrapper.buildTestContext(AbstractTestContextBootstrapper.java:108)
+	at org.springframework.test.context.TestContextManager.&lt;init&gt;(TestContextManager.java:137)
+	at org.springframework.test.context.TestContextManager.&lt;init&gt;(TestContextManager.java:122)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTestContextManager(SpringJUnit4ClassRunner.java:151)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.&lt;init&gt;(SpringJUnit4ClassRunner.java:142)
+	at org.springframework.test.context.junit4.SpringRunner.&lt;init&gt;(SpringRunner.java:49)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:104)
+	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:86)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:26)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)
+	at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:33)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:250)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.lang.ClassNotFoundException: org.springframework.core.annotation.MergedAnnotations$SearchStrategy
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:372)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:360)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 31 more
+</error>
   </testcase>
-  <testcase classname="com.niit.ElectronicBackend.SpringTest" name="updateUserDetails" time="0.259">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.niit.ElectronicBackend.SpringTest" name="getUserDetails" time="0.259">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.niit.ElectronicBackend.SpringTest" name="deleteUserDetails" time="0.259">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.niit.ElectronicBackend.SpringTest" name="addUserDetails" time="0.121"/>
 </testsuite>

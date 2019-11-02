@@ -17,14 +17,14 @@ public class UserDetailsServerIMp implements UserDetailsService
 	UserDAO userDAO;
 
     @Transactional(readOnly = true)
-	  public org.springframework.security.core.userdetails.UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
+	public org.springframework.security.core.userdetails.UserDetails loadUserByUsername(String username) throws UsernameNotFoundException 
+    {
     	User user=new User();
     	user.setUsername(username);
 	    User user1 =  userDAO.displayUserByUserName(user);
 	    UserBuilder builder = null;
-	    if (user1 != null) {
-	      
+	    if (user1 != null) 
+	    {
 	      builder = org.springframework.security.core.userdetails.User.withUsername(username);
 	      builder.disabled(!user1.isEnabled());
 	      builder.password(user1.getPassword());

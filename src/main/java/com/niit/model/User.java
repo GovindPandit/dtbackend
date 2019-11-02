@@ -41,7 +41,10 @@ public class User
 	private String mobile;
 	@Pattern(regexp = "(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#_-]).{8,16}",message="Password is weak")
 	private String password;
+	
 	private boolean enabled;
+	private String authority;
+	
 	
 	public boolean isEnabled() {
 		return enabled;
@@ -49,8 +52,6 @@ public class User
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-	private String authority;
-	
 	
 	public String getAuthority() {
 		return authority;
