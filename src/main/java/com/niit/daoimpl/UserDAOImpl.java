@@ -25,6 +25,7 @@ public class UserDAOImpl implements UserDAO
 	public boolean addUser(User user)
 	{
 		user.setEnabled(true);
+		user.setAuthority("user");
 		user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 		sessionFactory.getCurrentSession().save(user);
 		return true;
