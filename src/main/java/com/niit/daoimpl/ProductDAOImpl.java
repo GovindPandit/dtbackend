@@ -22,6 +22,7 @@ public class ProductDAOImpl implements ProductDAO
 	
 	public void addProduct(Product product) 
 	{
+		product.setStatus("A");
 		sessionFactory.getCurrentSession().save(product);
 	}
 
