@@ -56,7 +56,7 @@ public class ProductDAOImpl implements ProductDAO
 			 //positional arguments - ?
 			 //Named      arguments - :anyname
 			
-			 Query query=sessionFactory.getCurrentSession().createQuery("from com.niit.model.User where productid= :productid");
+			 Query query=sessionFactory.getCurrentSession().createQuery("from com.niit.model.Product where productid= :productid");
 			 query.setParameter("productid", product.getProductid());
 			 return (Product)query.getResultList().get(0);
 		}
