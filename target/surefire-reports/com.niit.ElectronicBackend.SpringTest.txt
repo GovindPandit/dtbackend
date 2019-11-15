@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.niit.ElectronicBackend.SpringTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.199 sec <<< FAILURE!
-initializationError(com.niit.ElectronicBackend.SpringTest)  Time elapsed: 0.007 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.247 sec <<< FAILURE!
+initializationError(com.niit.ElectronicBackend.SpringTest)  Time elapsed: 0.012 sec  <<< ERROR!
 java.lang.NoClassDefFoundError: org/springframework/core/annotation/MergedAnnotations$SearchStrategy
 	at org.springframework.test.context.support.TestPropertySourceUtils.buildMergedTestPropertySources(TestPropertySourceUtils.java:74)
 	at org.springframework.test.context.support.AbstractTestContextBootstrapper.buildMergedContextConfiguration(AbstractTestContextBootstrapper.java:386)
