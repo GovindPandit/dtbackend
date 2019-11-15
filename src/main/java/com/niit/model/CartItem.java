@@ -17,7 +17,7 @@ public class CartItem
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int caritemtid;
+	private int cartitemid;
 	@Column
 	private int quantity;
 	private float totalprice;
@@ -44,12 +44,14 @@ public class CartItem
 		this.product = product;
 	}
 
-	public int getCaritemtid() {
-		return caritemtid;
+	
+
+	public int getCartitemid() {
+		return cartitemid;
 	}
 
-	public void setCaritemtid(int caritemtid) {
-		this.caritemtid = caritemtid;
+	public void setCartitemid(int cartitemid) {
+		this.cartitemid = cartitemid;
 	}
 
 	public int getQuantity()
