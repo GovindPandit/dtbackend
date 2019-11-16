@@ -12,4 +12,9 @@ public interface ProductDAO
 	public List<Product> displayProducts();
 	public Product displayProductById(Product product);
 	public Product displayProductByName(Product product);
+	public List<Product> displayProductByPriceAsc();
+	public List<Product> displayProductByPriceDesc();
+	public List<Product> searchByName(String name);
 }
+
+

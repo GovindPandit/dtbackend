@@ -4,8 +4,10 @@ import java.util.List;
 
 import javax.persistence.Query;
 
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -73,7 +75,7 @@ public class ProductDAOImpl implements ProductDAO
 			 //positional arguments - ?
 			 //Named      arguments - :anyname
 			
-			 Query query=sessionFactory.getCurrentSession().createQuery("from com.niit.model.User where productname= :productname");
+			 Query query=sessionFactory.getCurrentSession().createQuery("from com.niit.model.Product where productname= :productname");
 			 query.setParameter("productname", product.getProductname());
 			 return (Product)query.getResultList().get(0);
 		}
@@ -81,6 +83,48 @@ public class ProductDAOImpl implements ProductDAO
 		{
 			return null;
 		}
+	}
+	
+	public List<Product> searchByName(String name) 
+	{
+		try
+		{
+			Query query=sessionFactory.getCurrentSession().createQuery("from com.niit.model.Product where lower(productname) like :productname ");
+			query.setParameter("productname", "%"+name.toLowerCase()+"%");
+			return query.getResultList();
+		}
+		catch (Exception e) 
+		{
+			System.out.println(e);
+			return null;
+		}
+	}
+
+	public List<Product> displayProductByPriceAsc() 
+	{
+		try
+		{
+			 return sessionFactory.getCurrentSession().createQuery("from com.niit.model.Product order by price asc").list();
+		}
+		catch (Exception e) 
+		{
+			return null;
+		}
+	}
+
+	public List<Product> displayProductByPriceDesc() 
+	{
+		try
+		{
+			
+			List<Product> products=sessionFactory.getCurrentSession().createQuery("from com.niit.model.Product order by price desc").list();
+			return products;
+		}
+		catch (Exception e) 
+		{
+			return null;
+		}
+	
 	}
 
 }
