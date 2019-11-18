@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Repository;
 
@@ -30,7 +31,16 @@ public class Product
 	private float price;
 	private int quantity;
 	private String status;
+	@Transient
+	private String imageurl;
 	
+	
+	public String getImageurl() {
+		return imageurl;
+	}
+	public void setImageurl(String imageurl) {
+		this.imageurl = imageurl;
+	}
 	@OneToMany(fetch=FetchType.EAGER)
 	private Set<Order> orders;
 	
